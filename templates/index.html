@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Fight</title>
+    <script src="/static/viewer.js"></script>
+</head>
+<body>
+    <h1>Upload Your Bots</h1>
+    <form method="post" enctype="multipart/form-data">
+        Bot 1: <input type="file" name="bot1" required><br>
+        Bot 2: <input type="file" name="bot2" required><br>
+        <button type="submit">Fight!</button>
+    </form>
+
+    {% if match_id %}
+    <h2>Result: {{ result }}</h2>
+    <button onclick="loadMatch('{{ match_id }}')">Watch Replay</button>
+    <div id="board"></div>
+    {% endif %}
+</body>
+</html>
